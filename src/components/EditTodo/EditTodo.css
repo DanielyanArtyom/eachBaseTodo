@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.editForm {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left:105%;    
+}
+
+.editInputs {
+    text-align: center;
+    margin:10px 0;
+}
+
+.editTitleError {
+    margin:10px 0;
+    height: 70px;
+    font-size:12px;
+    color:red;
+}
+
+.editDescriptError {
+    margin:10px 0 5px 0;
+    height: 70px;
+    font-size:12px;
+    color:red;
+}
+
+.editInput {
+    margin-top:10px;
+    width: 160px;
+    height: 30px;
+    border:none;
+    background:none;
+    border-bottom:1px solid red;
+    margin-bottom:10px;
+    padding: 5px;
+}
+
+.editInput:focus {
+    border-radius: 5px;
+    border:1px solid red;
+}
+
+
+.editBtns {
+    margin:10px 0;
+}
+
+.editButton {
+    background:none;
+    outline: none;
+    border:1px solid red;
+    border-radius: 5px;
+    margin-right:5px;
+    width: 80px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.editButton:hover { 
+    background-color: tomato;
+    color:white;
+}
