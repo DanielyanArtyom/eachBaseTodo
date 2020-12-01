@@ -16,7 +16,6 @@ const todoes = (state = initialState, action) => {
         case 'UPDATE_TODO': {
             const updatedTodo = state.todoes.map(todo => todo._id === action.payload._id ?
                 { ...todo, title: action.payload.title, description: action.payload.description, color: action.payload.color } : todo)
-            console.log(updatedTodo)
             return {
                 ...state,
                 todoes: updatedTodo
@@ -34,7 +33,6 @@ const todoes = (state = initialState, action) => {
 
         case 'ISCHECKED_UPDATE': {
             const updateIsChecked = state.todoes.map(todo => todo._id === action.payload ? { ...todo, checked: !todo.checked } : todo)
-            console.log('checked')
             return {
                 ...state,
                 todoes: updateIsChecked

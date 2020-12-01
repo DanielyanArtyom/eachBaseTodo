@@ -10,11 +10,10 @@ import { fetchTodoes, deleteAll } from '../../redux/actions/actions'
 const TodoesList = () => {
     const dispatch = useDispatch()
     const { todoes } = useSelector(({ todoes }) => todoes)
-    let isGetArray = true;
 
     React.useEffect(() => {
         dispatch(fetchTodoes);
-    }, [isGetArray])
+    }, [fetchTodoes])
 
     const removeList = () => {
         let arrayIds = todoes.map(todo => todo._id)

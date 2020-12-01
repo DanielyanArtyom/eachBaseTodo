@@ -14,7 +14,6 @@ const EditTodo = ({ _id, title, description, color, editing }) => {
         color,
         _id
     })
-    console.log(_id)
     const onChangeHandler = (color) => {
         setState({
             ...state,
