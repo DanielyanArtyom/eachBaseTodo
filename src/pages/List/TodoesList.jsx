@@ -13,7 +13,7 @@ const TodoesList = () => {
 
     React.useEffect(() => {
         dispatch(fetchTodoes);
-    }, [fetchTodoes])
+    }, [dispatch])
 
 
 
