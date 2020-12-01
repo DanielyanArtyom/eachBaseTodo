@@ -8,7 +8,7 @@ import axios from 'axios'
 const AddTodo = ({ history }) => {
     const [state, setState] = React.useState({
         title: '',
-        desciption: '',
+        description: '',
         color: 'black',
         checked: false,
         id: Date.now()
@@ -54,7 +54,7 @@ const AddTodo = ({ history }) => {
                 break;
             }
 
-            case 'desciption': {
+            case 'description': {
                 if (value.length === 1 || value.length < 8) {
                     setdescriptError("Description  must be longer than 8 letters")
                 } else if (!value) {
@@ -81,7 +81,7 @@ const AddTodo = ({ history }) => {
             .then(response => {
                 setState({
                     title: '',
-                    desciption: '',
+                    description: '',
                     color: 'black',
                     checked: false,
                     id: Date.now()
@@ -125,7 +125,7 @@ const AddTodo = ({ history }) => {
                     </div>
                     <div className="descriptError">
                         {(descriptionDirty && descriptError) && <p className="error">{descriptError}</p>}
-                        <input type="text" className="addInput" name="description" placeholder="input Description" onBlur={event => blurHandler(event)} onChange={onInputHandler('desciption')} />
+                        <input type="text" className="addInput" name="description" placeholder="input Description" onBlur={event => blurHandler(event)} onChange={onInputHandler('description')} />
                     </div>
                     <CirclePicker onChange={onChangeHandler} />
                     <input className={isValid ? "addButton" : "addButtonDisabled"} type="submit" value="Add todo" disabled={!isValid} onClick={onSubmitHandler} />

@@ -35,7 +35,7 @@ const TodoesList = () => {
                 </div>
                 <div className="list">
                     {todoes.length !== 0 ? todoes.map(todo => {
-                        return <TodoItem key={todo.id} title={todo.title} description={todo.desciption} color={todo.color}  {...todo} />
+                        return <TodoItem key={todo.id} title={todo.title} description={todo.description} color={todo.color}  {...todo} />
                     }) : <p className="emptyList" >Your List is Empty</p>}
 
                 </div>

@@ -5,12 +5,12 @@ import { CirclePicker } from 'react-color';
 import { useDispatch } from 'react-redux'
 import { sendUpdateAction } from '../../redux/actions/actions'
 
-const EditTodo = ({ id, title, desciption, color, editing, editRef }) => {
+const EditTodo = ({ id, title, description, color, editing, editRef }) => {
     const dispatch = useDispatch()
 
     const [state, setState] = React.useState({
         title,
-        desciption,
+        description,
         color,
         id
     })
@@ -41,7 +41,7 @@ const EditTodo = ({ id, title, desciption, color, editing, editRef }) => {
             <form className="editForm" style={{ border: `3px solid ${state.color}` }} >
                 <div className="editInputs" >
                     <input className="editInput" type="text" placeholder="Title" defaultValue={title} onChange={onInputChanger('title')} />
-                    <input className="editInput" type="text" placeholder="Description" defaultValue={desciption} onChange={onInputChanger('desciption')} />
+                    <input className="editInput" type="text" placeholder="Description" defaultValue={description} onChange={onInputChanger('description')} />
                 </div>
                 <CirclePicker width={150} circleSpacing={10} circleSize={18} onChange={onChangeHandler} />
                 <div className="editBtns">

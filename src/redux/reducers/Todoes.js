@@ -15,7 +15,7 @@ const todoes = (state = initialState, action) => {
 
         case 'UPDATE_TODO': {
             const updatedTodo = state.todoes.map(todo => todo.id === action.payload.id ?
-                { ...todo, title: action.payload.title, description: action.payload.desciption, color: action.payload.color } : todo)
+                { ...todo, title: action.payload.title, description: action.payload.description, color: action.payload.color } : todo)
             return {
                 ...state,
                 todoes: updatedTodo

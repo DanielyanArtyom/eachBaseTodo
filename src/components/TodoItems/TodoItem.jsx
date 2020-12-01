@@ -40,7 +40,7 @@ const TodoItems = ({ title, description, color, id, checked }) => {
                     <img className="deleteIcon" src={deleteIcon} alt="delete Icon" onClick={onDeleteItemHandler} />
                 </div>
             </div>
-            {state && <EditTodo id={id} title={title} desciption={description} color={color} editing={onEditHandler} />}
+            {state && <EditTodo id={id} title={title} description={description} color={color} editing={onEditHandler} />}
         </div>
     )
 }
