@@ -15,8 +15,6 @@ const TodoesList = () => {
         dispatch(fetchTodoes);
     }, [dispatch])
 
-
-
     const removeList = () => {
         let arrayIds = todoes.map(todo => todo._id)
         arrayIds.forEach(todo => {

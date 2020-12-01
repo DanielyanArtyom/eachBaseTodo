@@ -24,7 +24,6 @@ const todoes = (state = initialState, action) => {
 
         case 'DELETE_TODO': {
             const deleteTodo = state.todoes.filter(todo => todo._id !== action.payload)
-            console.log(deleteTodo)
             return {
                 ...state,
                 todoes: deleteTodo
