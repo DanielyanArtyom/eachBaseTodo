@@ -5,16 +5,16 @@ import { CirclePicker } from 'react-color';
 import { useDispatch } from 'react-redux'
 import { sendUpdateAction } from '../../redux/actions/actions'
 
-const EditTodo = ({ id, title, description, color, editing, editRef }) => {
+const EditTodo = ({ _id, title, description, color, editing }) => {
     const dispatch = useDispatch()
 
     const [state, setState] = React.useState({
         title,
         description,
         color,
-        id
+        _id
     })
-
+    console.log(_id)
     const onChangeHandler = (color) => {
         setState({
             ...state,

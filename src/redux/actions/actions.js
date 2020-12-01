@@ -35,29 +35,29 @@ export const fetchTodoes = (dispatch) => {
 }
 
 export const sendUpdateAction = (todo) => (dispatch) => {
-    axios.patch('https://todo.eachbase.com/api/ArtyomDanielyan/todos/:' + todo.id, todo)
+    axios.patch('https://todo.eachbase.com/api/ArtyomDanielyan/todos/' + todo._id, { title: todo.title, description: todo.description, color: todo.color })
         .then(
-            dispatch(updateTodo(todo))
+            dispatch(updateTodo(todo)),
         )
         .catch(msg => {
             console.error(msg)
         })
 }
 
-export const sendDeleteAction = (id) => (dispatch) => {
-    axios.delete('https://todo.eachbase.com/api/ArtyomDanielyan/todos/:' + id)
+export const sendDeleteAction = (_id) => (dispatch) => {
+    axios.delete('https://todo.eachbase.com/api/ArtyomDanielyan/todos/' + _id)
         .then(
-            dispatch(deleteTodo(id))
+            dispatch(deleteTodo(_id))
         )
         .catch(msg => {
             console.error(msg)
         })
 }
 
-export const sendIsCheckedUpdate = (id, checked) => (dispatch) => {
-    axios.patch('https://todo.eachbase.com/api/ArtyomDanielyan/todos/:' + id, { checked: !checked })
+export const sendIsCheckedUpdate = (_id, checked) => (dispatch) => {
+    axios.patch('https://todo.eachbase.com/api/ArtyomDanielyan/todos/' + _id, { checked: !checked })
         .then(
-            dispatch(isCheckedUpdated(id))
+            dispatch(isCheckedUpdated(_id))
         )
         .catch(msg => {
             console.error(msg)

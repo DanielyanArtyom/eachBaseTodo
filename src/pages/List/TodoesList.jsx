@@ -10,18 +10,19 @@ import { fetchTodoes, deleteAll } from '../../redux/actions/actions'
 const TodoesList = () => {
     const dispatch = useDispatch()
     const { todoes } = useSelector(({ todoes }) => todoes)
+    let isGetArray = true;
 
     React.useEffect(() => {
         dispatch(fetchTodoes);
-    })
+    }, [isGetArray])
 
     const removeList = () => {
-        let arrayIds = todoes.map(todo => todo.id)
-
+        let arrayIds = todoes.map(todo => todo._id)
         arrayIds.forEach(todo => {
-            axios.delete('https://todo.eachbase.com/api/ArtyomDanielyan/todos/:' + todo)
-        }).catch(error => {
-            console.log(error)
+            axios.delete('https://todo.eachbase.com/api/ArtyomDanielyan/todos/' + todo)
+                .catch(error => {
+                    console.log(error)
+                })
         })
         dispatch(deleteAll())
     }
@@ -35,13 +36,13 @@ const TodoesList = () => {
                 </div>
                 <div className="list">
                     {todoes.length !== 0 ? todoes.map(todo => {
-                        return <TodoItem key={todo.id} title={todo.title} description={todo.description} color={todo.color}  {...todo} />
+                        return <TodoItem key={todo._id} title={todo.title} description={todo.description} color={todo.color}  {...todo} />
                     }) : <p className="emptyList" >Your List is Empty</p>}
 
                 </div>
                 <div className="addArea">
                     <Link to="/addtodo">
-                        <div className="addBtn"> +</div>
+                        <div className="addBtn">+</div>
                     </Link>
                 </div>
             </section>

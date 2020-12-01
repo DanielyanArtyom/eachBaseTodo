@@ -6,17 +6,17 @@ import EditTodo from '../EditTodo/EditTodo'
 import { useDispatch } from 'react-redux'
 import { sendDeleteAction, sendIsCheckedUpdate } from '../../redux/actions/actions'
 
-const TodoItems = ({ title, description, color, id, checked }) => {
+const TodoItems = ({ title, description, color, _id, checked }) => {
 
     const dispatch = useDispatch()
     const [state, setState] = React.useState(false)
 
     const onDeleteItemHandler = () => {
-        dispatch(sendDeleteAction(id))
+        dispatch(sendDeleteAction(_id))
     }
 
     const onIsCheckedHandler = () => {
-        dispatch(sendIsCheckedUpdate(id, checked))
+        dispatch(sendIsCheckedUpdate(_id, checked))
     }
 
     const onEditHandler = (isEdit) => {
@@ -40,7 +40,7 @@ const TodoItems = ({ title, description, color, id, checked }) => {
                     <img className="deleteIcon" src={deleteIcon} alt="delete Icon" onClick={onDeleteItemHandler} />
                 </div>
             </div>
-            {state && <EditTodo id={id} title={title} description={description} color={color} editing={onEditHandler} />}
+            {state && <EditTodo _id={_id} title={title} description={description} color={color} editing={onEditHandler} />}
         </div>
     )
 }

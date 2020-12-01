@@ -11,7 +11,6 @@ const AddTodo = ({ history }) => {
         description: '',
         color: 'black',
         checked: false,
-        id: Date.now()
     })
 
     const [isLoading, setIsLoading] = React.useState(false)
@@ -84,7 +83,6 @@ const AddTodo = ({ history }) => {
                     description: '',
                     color: 'black',
                     checked: false,
-                    id: Date.now()
                 })
                 if (!window.confirm("Do you want add more?")) {
                     history.push("/")
