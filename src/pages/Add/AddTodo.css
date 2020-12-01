@@ -106,3 +106,13 @@
     font-size:14px;
     z-index: 5;
 }
+
+.requestError {
+    color:red;
+    text-align: center;
+    font-size:18px;
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    top:50%;
+    left:5%;
+}

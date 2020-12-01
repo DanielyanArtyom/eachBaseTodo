@@ -15,6 +15,7 @@ const AddTodo = ({ history }) => {
     })
 
     const [isLoading, setIsLoading] = React.useState(false)
+    const [isReach, setIsReach] = React.useState(true)
 
     //Form validation dependences
     const [titleDirt, setTitleDirty] = React.useState(false)
@@ -91,7 +92,7 @@ const AddTodo = ({ history }) => {
                 setIsLoading(false)
             })
             .catch(msg => {
-                console.log(msg.response)
+                setIsReach(false)
             })
     }
 
@@ -116,7 +117,7 @@ const AddTodo = ({ history }) => {
                 <div className="backBtn"><Link to="/">Back</Link> </div>
                 <h2 className="addTitle">Add Todo</h2>
             </div>
-            {isLoading ? <Loader width="120px" height="120px" /> :
+            {isReach ? (isLoading ? <Loader width="120px" height="120px" /> :
                 <form className="form">
                     <div className="titleError">
                         {(titleDirt && titleError) && <div className="error">{titleError}</div>}
@@ -128,7 +129,8 @@ const AddTodo = ({ history }) => {
                     </div>
                     <CirclePicker onChange={onChangeHandler} />
                     <input className={isValid ? "addButton" : "addButtonDisabled"} type="submit" value="Add todo" disabled={!isValid} onClick={onSubmitHandler} />
-                </form>
+                </form>)
+                : (<div className='requestError'>Your Request is Failed, pls refresh and try again</div>)
             }
         </section>
     )
