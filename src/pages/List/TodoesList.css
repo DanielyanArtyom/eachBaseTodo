@@ -13,8 +13,8 @@
     position: absolute;
     margin:0 25px;
     top:50%;
-    left:10%;
-    transform: translate(-10%,-50%);
+    left:50%;
+    transform: translate(-50%,-50%);
     -webkit-box-shadow: 5px 4px 50px 12px rgba(0,0,0,0.24); 
     box-shadow: 5px 4px 50px 12px rgba(0,0,0,0.24);
 }
