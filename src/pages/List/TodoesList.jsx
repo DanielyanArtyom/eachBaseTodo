@@ -13,7 +13,9 @@ const TodoesList = () => {
 
     React.useEffect(() => {
         dispatch(fetchTodoes);
-    }, [fetchTodoes])
+    }, [dispatch(fetchTodoes)])
+
+
 
     const removeList = () => {
         let arrayIds = todoes.map(todo => todo._id)

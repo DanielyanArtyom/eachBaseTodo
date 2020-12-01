@@ -28,6 +28,7 @@ export const fetchTodoes = (dispatch) => {
     axios.get('https://todo.eachbase.com/api/ArtyomDanielyan/todos')
         .then(({ data }) => {
             dispatch(setTodoes(data))
+            console.log("get")
         })
         .catch(msg => {
             console.error(msg)
