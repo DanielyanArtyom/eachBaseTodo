@@ -29,7 +29,8 @@ const AddTodo = ({ history }) => {
         } else {
             setIsValid(true)
         }
-    })
+    }, [titleError, descriptError])
+
     const onChangeHandler = (color) => {
         setState({
             ...state,
@@ -63,6 +64,8 @@ const AddTodo = ({ history }) => {
                 }
                 break;
             }
+            default:
+                break;
         }
         setState({
             ...state,
@@ -102,6 +105,8 @@ const AddTodo = ({ history }) => {
                 setdescriptionDirty(true);
                 break;
             }
+            default:
+                break;
         }
     }
 
